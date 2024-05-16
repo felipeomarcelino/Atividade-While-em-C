@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int num_alunos;
+    float peso, soma_pesos = 0;
+    int contador = 0;
+
+    printf("Quantos alunos você tem na sua academia? ");
+    scanf("%d", &num_alunos);
+
+    while (contador < num_alunos) {
+        printf("Digite o peso do aluno %d: ", contador + 1);
+        scanf("%f", &peso);
+        soma_pesos += peso; // Adiciona o peso à soma total
+        contador++; // Incrementa o contador de alunos
+    }
+
+    if (num_alunos > 0) {
+        float media = soma_pesos / num_alunos;
+        printf("A média de peso dos alunos é: %.2f\n", media);
+    } else {
+        printf("Nenhum aluno inserido. Não é possível calcular a média.\n");
+    }
+
+    return 0;
+}
